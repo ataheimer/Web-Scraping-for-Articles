@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademik Arama</title>
+</head>
+<body>
+    <h1>Akademik Arama</h1>
+    <form action="/" method="POST">
+        <input type="text" name="arama_terimi" placeholder="Arama yapın">
+        <button type="submit">Ara</button>
+    </form>
+    <h1>MongoDB Kayitlari</h1>
+    <form action="/bilgiler" method="POST">
+        {% for kayit in kayitlar %}
+            <button type="submit" name="kayit" value="{{ kayit }}">{{ kayit["_id"] }}</button>
+            <br>
+        {% endfor %}
+    </form>
+</body>
+</html>
